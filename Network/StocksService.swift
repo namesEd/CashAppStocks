@@ -19,11 +19,11 @@ import Combine
 //    }
 //}
 
-protocol StocksServiceProtocol {
-    func fetchStocks() async throws -> [Stock]
-}
+//protocol StocksServiceProtocol {
+//    func fetchStocks() async throws -> [Stock]
+//}
 
-class StocksService: StocksServiceProtocol {
+class StocksService {
     func fetchStocks() async throws -> [Stock] {
         guard let url = URL(string: "https://storage.googleapis.com/cash-homework/cash-stocks-api/portfolio.json") else {
             throw APIError.invalidURL

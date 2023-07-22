@@ -18,11 +18,12 @@ class StocksViewModel: ObservableObject {
     @Published var stocks = [Stock]()
     @Published var status: AsynchStatus = .initial
 
-    let service: StocksServiceProtocol
-    init(service: StocksServiceProtocol = StocksService()){
+    let service: StocksService
+    
+    init(service: StocksService = StocksService()){
         self.service = service
     }
-    
+
                 
     func getStocks() {
         status = .loading
@@ -34,7 +35,6 @@ class StocksViewModel: ObservableObject {
                     self.status = .loaded
                 }
             } catch {
-                // Handle any errors that occurred during the fetching process
                 print("Error fetching stocks: \(error)")
             }
         }

@@ -41,7 +41,7 @@ struct ContentView: View {
                             
                         }
                         .padding()
-                        //Text("\((stock.current_price_timestamp)/10000)")
+                        Text("\((stock.current_price_timestamp)/10000)")
                         
                     }
                     
